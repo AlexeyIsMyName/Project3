@@ -38,10 +38,10 @@ class FlagListTableViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         
         var flagName = flagPaths[indexPath.row]
-        let firstSpace = flagName.firstIndex(of: ".") ?? flagName.endIndex
-        flagName = String(flagName[..<firstSpace])
+        let firstDot = flagName.firstIndex(of: ".") ?? flagName.endIndex
+        flagName = String(flagName[..<firstDot])
         
-        content.text = flagName + " " + String(indexPath.row)
+        content.text = flagName
         cell.contentConfiguration = content
         return cell
     }
