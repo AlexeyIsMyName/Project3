@@ -11,7 +11,7 @@ class FlagViewController: UIViewController {
 
     @IBOutlet var flagImageView: UIImageView!
     
-    var flagImagePath: String!
+    var flagImagePath: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ class FlagViewController: UIViewController {
         }
 
         let firstDot = flagName.firstIndex(of: ".") ?? flagName.endIndex
-        flagName = String(flagName[..<firstDot])
+        flagName = String(flagName[..<firstDot]).uppercased()
         
         let vc = UIActivityViewController(activityItems: [flagImage, flagName], applicationActivities: [])
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem

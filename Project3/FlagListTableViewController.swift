@@ -39,7 +39,7 @@ class FlagListTableViewController: UITableViewController {
         
         var flagName = flagPaths[indexPath.row]
         let firstDot = flagName.firstIndex(of: ".") ?? flagName.endIndex
-        flagName = String(flagName[..<firstDot])
+        flagName = String(flagName[..<firstDot]).uppercased()
         
         content.text = flagName
         cell.contentConfiguration = content
