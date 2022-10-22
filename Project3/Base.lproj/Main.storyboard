@@ -3,11 +3,12 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Flags-->
         <scene sceneID="Ehg-Wf-duM">
             <objects>
                 <tableViewController id="BeX-MA-gwg" customClass="FlagListTableViewController" customModule="Project3" customModuleProvider="target" sceneMemberID="viewController">
@@ -39,18 +40,53 @@
                             <outlet property="delegate" destination="BeX-MA-gwg" id="4Zb-Xq-DGs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="7db-rh-IZH"/>
+                    <navigationItem key="navigationItem" title="Flags" largeTitleDisplayMode="always" id="7db-rh-IZH"/>
+                    <connections>
+                        <segue destination="5tO-qj-4uP" kind="show" identifier="showFlag" id="WWK-J3-bE7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IfG-Zs-Idh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="162" y="-21"/>
         </scene>
+        <!--Flag View Controller-->
+        <scene sceneID="08v-y3-UEL">
+            <objects>
+                <viewController id="5tO-qj-4uP" customClass="FlagViewController" customModule="Project3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aZc-yJ-OTk">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xwc-Z4-rBf">
+                                <rect key="frame" x="0.0" y="325" width="390" height="195"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Xwc-Z4-rBf" secondAttribute="height" multiplier="600:300" id="2Cq-Xh-Udl"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qW1-tJ-rKi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xwc-Z4-rBf" firstAttribute="centerY" secondItem="aZc-yJ-OTk" secondAttribute="centerY" id="Azx-qv-ZNM"/>
+                            <constraint firstItem="Xwc-Z4-rBf" firstAttribute="trailing" secondItem="qW1-tJ-rKi" secondAttribute="trailing" id="Nb5-Et-BA8"/>
+                            <constraint firstItem="Xwc-Z4-rBf" firstAttribute="leading" secondItem="qW1-tJ-rKi" secondAttribute="leading" id="QqT-Ol-1W1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="DKI-zW-QfJ"/>
+                    <connections>
+                        <outlet property="flagImageView" destination="Xwc-Z4-rBf" id="rkm-6k-wz2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TMS-F8-1Xs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="956.92307692307691" y="-21.327014218009477"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="vaq-5Q-ffu">
             <objects>
                 <navigationController id="JMu-W3-5lO" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ETL-2w-MZg">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ETL-2w-MZg">
+                        <rect key="frame" x="0.0" y="47" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

@@ -25,6 +25,7 @@
 		E716C6E72903F47700E34515 /* us.png in Resources */ = {isa = PBXBuildFile; fileRef = E716C6CF2903F47700E34515 /* us.png */; };
 		E716C6E82903F47700E34515 /* france.png in Resources */ = {isa = PBXBuildFile; fileRef = E716C6D02903F47700E34515 /* france.png */; };
 		E716C6EA2903F47700E34515 /* monaco.png in Resources */ = {isa = PBXBuildFile; fileRef = E716C6D22903F47700E34515 /* monaco.png */; };
+		E716C6EF2903FB3D00E34515 /* FlagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716C6EE2903FB3D00E34515 /* FlagViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		E716C6CF2903F47700E34515 /* us.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = us.png; sourceTree = "<group>"; };
 		E716C6D02903F47700E34515 /* france.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = france.png; sourceTree = "<group>"; };
 		E716C6D22903F47700E34515 /* monaco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monaco.png; sourceTree = "<group>"; };
+		E716C6EE2903FB3D00E34515 /* FlagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				E716C6A72903F1EA00E34515 /* AppDelegate.swift */,
 				E716C6A92903F1EA00E34515 /* SceneDelegate.swift */,
 				E716C6BB2903F29600E34515 /* FlagListTableViewController.swift */,
+				E716C6EE2903FB3D00E34515 /* FlagViewController.swift */,
 				E716C6AD2903F1EA00E34515 /* Main.storyboard */,
 				E716C6B02903F1EE00E34515 /* Assets.xcassets */,
 				E716C6B22903F1EE00E34515 /* LaunchScreen.storyboard */,
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E716C6EF2903FB3D00E34515 /* FlagViewController.swift in Sources */,
 				E716C6BC2903F29700E34515 /* FlagListTableViewController.swift in Sources */,
 				E716C6A82903F1EA00E34515 /* AppDelegate.swift in Sources */,
 				E716C6AA2903F1EA00E34515 /* SceneDelegate.swift in Sources */,
