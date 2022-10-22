@@ -8,38 +8,46 @@
 import UIKit
 
 class FlagListTableViewController: UITableViewController {
+    
+    private var flagNames = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        getFlags()
+    }
+    
+    private func getFlags() {
+        let path = Bundle.main.resourcePath!
+        let fm = FileManager.default
+        let items = try! fm.contentsOfDirectory(atPath: path)
+        for item in items {
+            if item.hasSuffix("png") {
+                flagNames.append(item)
+            }
+        }
+        flagNames.sort()
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return flagNames.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FlagName", for: indexPath)
+        var content = cell.defaultContentConfiguration()
+        
+        var flagName = flagNames[indexPath.row]
+        let firstSpace = flagName.firstIndex(of: ".") ?? flagName.endIndex
+        flagName = String(flagName[..<firstSpace])
+        
+        content.text = flagName
+        cell.contentConfiguration = content
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
